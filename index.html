@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muscle Photo Tokyo｜ポージング撮影・指導サービス</title>
+<title>Posing Coaching &amp; Photography｜ポージング撮影・指導サービス</title>
 <meta name="description" content="フィジーク・ボディビル大会の選手向け、ポージングの撮影と指導サービス。審査席から良く見えるポージングを客観的に見直し、改善します。">
 
 <!-- 検索エンジンに表示させない設定 -->
@@ -49,8 +49,9 @@ header{
   border-bottom:1px solid var(--line);
 }
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{font-family:"Oswald",sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:.08em}
+.logo{font-family:"Oswald",sans-serif;font-weight:700;font-size:1rem;letter-spacing:.03em;white-space:nowrap}
 .logo span{color:var(--accent)}
+@media(max-width:520px){.logo{font-size:.82rem}}
 .nav-links{display:flex;gap:28px;font-size:.82rem;font-weight:500}
 .nav-links a{color:var(--muted);transition:color .2s}
 .nav-links a:hover{color:var(--accent)}
@@ -229,7 +230,7 @@ footer .small{font-size:.72rem;color:#5a5a63}
 
 <header>
   <div class="container nav">
-    <div class="logo">MUSCLE<span>PHOTO</span>.TOKYO</div>
+    <div class="logo">Posing Coaching <span>&amp;</span> Photography</div>
     <nav class="nav-links" id="navLinks">
       <a href="#about">サービス</a>
       <a href="#service">内容</a>
@@ -246,7 +247,7 @@ footer .small{font-size:.72rem;color:#5a5a63}
 <section class="hero">
   <div class="container hero-grid">
     <div class="reveal in">
-      <span class="hero-eyebrow">Posing Coaching &amp; Photography</span>
+      <span class="hero-eyebrow">For Physique &amp; Bodybuilding Athletes</span>
       <h1>客観的に自分の<br>ポージングを<span class="accent">見直しませんか？</span>
         <span class="sub">フィジーク・ボディビル大会の選手のための撮影＆ポージング指導</span>
       </h1>
@@ -366,24 +367,10 @@ footer .small{font-size:.72rem;color:#5a5a63}
     <div class="reveal" style="text-align:center">
       <div class="section-label">Contact</div>
       <h2 class="section-title">お問い合わせ</h2>
-      <p class="section-lead" style="margin:0 auto 40px">ご質問・お申し込みはお気軽にどうぞ。下記フォームの送信ボタンを押すとメールソフトが起動します。</p>
+      <p class="section-lead" style="margin:0 auto 32px">ご質問・お申し込みはメールにてお気軽にどうぞ。下のボタンを押すと、入力用のテンプレート付きでメールが作成されます。お名前・出場予定の大会・ご希望（オンライン／対面）・ご質問などをご記入のうえ送信してください。</p>
+      <a class="btn" href="mailto:info@musclephoto.tokyo?subject=【お問い合わせ】ポージング指導サービス&body=お名前：%0A出場予定の大会：%0Aご希望（オンライン／対面）：%0Aお問い合わせ内容：%0A">メールで問い合わせる</a>
+      <p class="form-note" style="margin-top:24px">ボタンが反応しない場合は、こちらのアドレスへ直接ご連絡ください<br><a href="mailto:info@musclephoto.tokyo">info@musclephoto.tokyo</a></p>
     </div>
-    <form class="reveal" id="contactForm">
-      <div class="form-field">
-        <label>お名前<span class="req">必須</span></label>
-        <input type="text" id="f_name" required>
-      </div>
-      <div class="form-field">
-        <label>メールアドレス<span class="req">必須</span></label>
-        <input type="email" id="f_email" required>
-      </div>
-      <div class="form-field">
-        <label>お問い合わせ内容<span class="req">必須</span></label>
-        <textarea id="f_msg" required placeholder="ご希望の内容、出場予定の大会、ご質問などをご記入ください。"></textarea>
-      </div>
-      <p class="form-note">送信が起動しない場合は <a href="mailto:info@musclephoto.tokyo">info@musclephoto.tokyo</a> へ直接ご連絡ください。</p>
-      <button type="submit" class="btn contact-submit">メールを作成して送信</button>
-    </form>
   </div>
 </section>
 
@@ -411,8 +398,8 @@ footer .small{font-size:.72rem;color:#5a5a63}
 
 <footer>
   <div class="container">
-    <div class="logo">MUSCLE<span class="accent">PHOTO</span>.TOKYO</div>
-    <p>ポージング撮影・指導サービス</p>
+    <div class="logo">Posing Coaching <span class="accent">&amp;</span> Photography</div>
+    <p>ポージング撮影・指導サービス｜musclephoto.tokyo</p>
     <p><a href="mailto:info@musclephoto.tokyo" style="color:var(--accent)">info@musclephoto.tokyo</a></p>
     <p class="small">運営：アシスト合同会社　千葉県長生郡一宮町一宮9803−2</p>
     <p class="small">© 2026 Muscle Photo Tokyo / アシスト合同会社 All Rights Reserved.</p>
@@ -431,21 +418,6 @@ const io=new IntersectionObserver((es)=>{
   es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-// 問い合わせフォーム → mailto 起動
-document.getElementById('contactForm').addEventListener('submit',function(ev){
-  ev.preventDefault();
-  const name=document.getElementById('f_name').value.trim();
-  const email=document.getElementById('f_email').value.trim();
-  const msg=document.getElementById('f_msg').value.trim();
-  const subject=encodeURIComponent('【お問い合わせ】ポージング指導サービス');
-  const body=encodeURIComponent(
-    'お名前：'+name+'\n'+
-    'メールアドレス：'+email+'\n\n'+
-    'お問い合わせ内容：\n'+msg+'\n'
-  );
-  window.location.href='mailto:info@musclephoto.tokyo?subject='+subject+'&body='+body;
-});
 </script>
 </body>
 </html>
