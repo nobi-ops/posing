@@ -183,6 +183,21 @@ section.block{padding:90px 0}
 .gallery img:hover{filter:grayscale(0);transform:scale(1.02)}
 @media(max-width:620px){.gallery{grid-template-columns:1fr 1fr}}
 
+/* ===== Correction cycle ===== */
+.cycle{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:14px;align-items:stretch;margin-bottom:26px}
+.cycle-step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px 18px;text-align:center}
+.cycle-step h3{font-size:1.05rem;margin:12px 0 8px;letter-spacing:0}
+.cycle-step p{color:var(--muted);font-size:.85rem;line-height:1.7}
+.cycle-step b{color:var(--accent)}
+.cycle-num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;font-family:"Oswald";font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06222a;font-size:1.15rem}
+.cycle-arrow{display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.6rem;font-weight:700}
+.cycle-goal{text-align:center;color:var(--txt);font-size:1.05rem;line-height:1.8;margin:0 auto 40px;max-width:700px;padding:18px 24px;background:rgba(25,195,201,.06);border:1px solid var(--accent-d);border-radius:12px}
+.cycle-goal b{color:var(--accent)}
+@media(max-width:760px){
+  .cycle{grid-template-columns:1fr;gap:6px}
+  .cycle-arrow{transform:rotate(90deg);padding:4px 0}
+}
+
 /* ===== EN block ===== */
 .en-block{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .en-block .section-lead{margin-bottom:30px}
@@ -235,7 +250,7 @@ footer .small{font-size:.72rem;color:#5a5a63}
       <a href="#about">サービス</a>
       <a href="#service">内容</a>
       <a href="#price">料金</a>
-      <a href="#gallery">ギャラリー</a>
+      <a href="#program">プログラム</a>
       <a href="#contact">お問い合わせ</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="メニュー">☰</button>
@@ -323,18 +338,32 @@ footer .small{font-size:.72rem;color:#5a5a63}
 </section>
 
 <!-- ===== GALLERY ===== -->
-<section class="block bg-alt" id="gallery">
+<section class="block bg-alt" id="program">
   <div class="container">
     <div class="reveal">
-      <div class="section-label">Gallery</div>
-      <h2 class="section-title">ポージングギャラリー</h2>
-      <p class="section-lead">ステージで魅せるポーズの一例です。</p>
+      <div class="section-label">Correction Program</div>
+      <h2 class="section-title">「撮る → 見直す → 直す」の反復で、<span class="accent">本番で迷わない</span></h2>
+      <p class="section-lead">これは写真を残すための撮影ではなく、ポージングの<b style="color:var(--txt)">矯正プログラム</b>です。自分のポーズを撮影して客観的に確認し、ズレを一緒に修正。直したらもう一度撮影して確認する——この反復を通じて、ステージ上でも考えずに正しいポーズが取れる状態を目指します。</p>
     </div>
+
+    <div class="cycle reveal">
+      <div class="cycle-step"><span class="cycle-num">1</span><h3>撮影する</h3><p>規定ポーズを撮影し、いまの状態を記録します。</p></div>
+      <div class="cycle-arrow">→</div>
+      <div class="cycle-step"><span class="cycle-num">2</span><h3>客観的に見る</h3><p>審査席の目線で、自分では気づけないズレを発見します。</p></div>
+      <div class="cycle-arrow">→</div>
+      <div class="cycle-step"><span class="cycle-num">3</span><h3>一緒に修正する</h3><p>角度・重心・流れを、その場で具体的に調整します。</p></div>
+      <div class="cycle-arrow">→</div>
+      <div class="cycle-step"><span class="cycle-num">4</span><h3>もう一度撮る</h3><p>直した姿を再撮影して変化を確認。<b>1〜4を繰り返します。</b></p></div>
+    </div>
+
+    <p class="cycle-goal reveal">この反復によって、<b>ステージ上でもすぐに正しいポージングが取れるようになる</b>こと——それがこのプログラムのゴールです。</p>
+
     <div class="gallery reveal">
-      <img src="photo1.jpeg" alt="フロントポーズ（腰に手）">
-      <img src="photo3.jpeg" alt="フロントダブルバイセップス">
-      <img src="photo2.jpeg" alt="バックポーズ">
+      <img src="photo1.jpeg" alt="撮影して確認するポーズ例（フロント）">
+      <img src="photo3.jpeg" alt="撮影して確認するポーズ例（フロントダブルバイセップス）">
+      <img src="photo2.jpeg" alt="撮影して確認するポーズ例（バック）">
     </div>
+    <p class="form-note" style="text-align:center;margin-top:14px">※ こうして各ポーズを撮影し、客観的にチェックしながら修正していきます。</p>
   </div>
 </section>
 
