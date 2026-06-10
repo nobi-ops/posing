@@ -150,6 +150,16 @@ section.block{padding:90px 0}
 .card h3{font-size:1.15rem;margin-bottom:10px;letter-spacing:0}
 .card p{color:var(--muted);font-size:.9rem}
 @media(max-width:760px){.cards{grid-template-columns:1fr}}
+.note-box{
+  margin-top:26px;background:rgba(25,195,201,.06);border:1px solid var(--accent-d);
+  border-radius:12px;padding:22px 26px;color:var(--muted);font-size:.92rem;line-height:1.8;
+}
+.note-box b{color:var(--txt)}
+.note-label{
+  display:inline-block;font-family:"Oswald";font-weight:600;letter-spacing:.04em;
+  color:var(--accent);font-size:.9rem;margin-right:10px;
+}
+.note-label::before{content:"Q. "}
 
 /* ===== Pricing ===== */
 .price-card{
@@ -283,6 +293,10 @@ footer .small{font-size:.72rem;color:#5a5a63}
       <div class="card reveal"><div class="num">02</div><h3>修正・改善指導</h3><p>撮影をもとに、角度・重心・流れを一つずつ修正。審査席から良く見えるポージングへ導きます。</p></div>
       <div class="card reveal"><div class="num">03</div><h3>オンライン／対面で受講</h3><p>月1回・60分のセッション。<b style="color:var(--txt)">ビデオ通話のオンライン受講</b>と対面のどちらにも対応。日時はご都合に合わせて個別に調整します。海外からの受講も歓迎します。</p></div>
     </div>
+    <div class="note-box reveal">
+      <span class="note-label">オンラインでも撮影は大丈夫？</span>
+      オンラインセッションでは、<b>事前にご自身で撮影したお写真・動画をお送りいただき</b>、ビデオ通話でそれを見ながら添削・指導します。通話中もカメラ越しにポーズを確認できるので、対面と変わらず細かく修正できます。スタジオでのプロ撮影をご希望の場合は、対面セッションをおすすめします。
+    </div>
   </div>
 </section>
 
@@ -338,6 +352,10 @@ footer .small{font-size:.72rem;color:#5a5a63}
         <li>Payments are non-refundable</li>
         <li>Session dates and times will be arranged individually to suit your schedule</li>
       </ul>
+      <div class="note-box" style="margin-top:24px">
+        <span class="note-label">Can you still do photography online?</span>
+        For online sessions, please send us photos and videos you've taken in advance; we review and coach you over a video call, and can also check your posing live on camera. If you'd like a professional studio shoot, we recommend an in-person session.
+      </div>
     </div>
   </div>
 </section>
