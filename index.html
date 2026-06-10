@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muscle Photo Tokyo｜ポージング撮影・指導サービス</title>
+<meta name="description" content="フィジーク・ボディビル大会の選手向け、ポージングの撮影と指導サービス。審査席から良く見えるポージングを客観的に見直し、改善します。">
+
+<!-- 検索エンジンに表示させない設定 -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0d0f;
+  --bg2:#15151a;
+  --card:#1c1c22;
+  --line:#2a2a32;
+  --txt:#f2f2f4;
+  --muted:#a3a3ad;
+  --accent:#19c3c9;   /* ターコイズ（水着の色） */
+  --accent2:#3ddc8a;  /* グリーン */
+  --accent-d:#0fa3a8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Sans JP",sans-serif;
+  background:var(--bg);
+  color:var(--txt);
+  line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.en-head{font-family:"Oswald","Noto Sans JP",sans-serif;letter-spacing:.04em}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.container{width:90%;max-width:1080px;margin:0 auto}
+.accent{color:var(--accent)}
+
+/* ===== Header ===== */
+header{
+  position:fixed;top:0;left:0;width:100%;z-index:100;
+  background:rgba(13,13,15,.72);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:"Oswald",sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:.08em}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:28px;font-size:.82rem;font-weight:500}
+.nav-links a{color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-toggle{display:none;background:none;border:none;color:var(--txt);font-size:1.5rem;cursor:pointer}
+@media(max-width:760px){
+  .nav-links{
+    position:fixed;top:64px;right:0;width:64%;height:calc(100vh - 64px);
+    flex-direction:column;gap:0;background:var(--bg2);
+    transform:translateX(100%);transition:transform .3s;padding-top:10px;
+    border-left:1px solid var(--line);
+  }
+  .nav-links.open{transform:translateX(0)}
+  .nav-links a{padding:16px 24px;border-bottom:1px solid var(--line);font-size:1rem}
+  .nav-toggle{display:block}
+}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:center;
+  background:
+    radial-gradient(1200px 600px at 75% 10%, rgba(25,195,201,.10), transparent 60%),
+    linear-gradient(160deg,#0d0d0f 0%, #121218 60%, #0d0d0f 100%);
+  overflow:hidden;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;
+  padding:120px 0 80px;
+}
+.hero-eyebrow{
+  display:inline-block;font-family:"Oswald";font-size:.8rem;letter-spacing:.25em;
+  color:var(--accent);border:1px solid var(--accent-d);
+  padding:6px 14px;border-radius:999px;margin-bottom:24px;text-transform:uppercase;
+}
+.hero h1{
+  font-size:clamp(2rem,5vw,3.4rem);line-height:1.25;font-weight:700;margin-bottom:22px;
+}
+.hero h1 .sub{display:block;font-size:.42em;color:var(--muted);font-weight:500;letter-spacing:.1em;margin-top:14px}
+.hero p.lead{color:var(--muted);font-size:1rem;max-width:480px;margin-bottom:34px}
+.btn{
+  display:inline-block;font-family:"Oswald";font-weight:600;letter-spacing:.08em;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#06222a;padding:15px 34px;border-radius:8px;font-size:.95rem;
+  transition:transform .2s, box-shadow .2s;box-shadow:0 8px 30px rgba(25,195,201,.25);
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 38px rgba(25,195,201,.4)}
+.btn-ghost{
+  background:transparent;color:var(--txt);border:1px solid var(--line);
+  box-shadow:none;margin-left:12px;
+}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.hero-img{position:relative}
+.hero-img img{
+  width:100%;border-radius:14px;border:1px solid var(--line);
+  box-shadow:0 30px 80px rgba(0,0,0,.6);object-fit:cover;aspect-ratio:3/4;
+}
+.hero-img .badge{
+  position:absolute;bottom:-16px;left:-16px;background:var(--card);
+  border:1px solid var(--accent-d);border-radius:10px;padding:14px 18px;
+  font-family:"Oswald";box-shadow:0 10px 30px rgba(0,0,0,.5);
+}
+.hero-img .badge b{color:var(--accent);font-size:1.4rem;display:block}
+.hero-img .badge small{color:var(--muted);font-size:.72rem;letter-spacing:.05em}
+@media(max-width:760px){
+  .hero-grid{grid-template-columns:1fr;padding:100px 0 60px}
+  .hero-img{order:-1;max-width:320px;margin:0 auto}
+  .btn-ghost{margin-left:0;margin-top:10px}
+}
+
+/* ===== Section base ===== */
+section.block{padding:90px 0}
+.section-label{font-family:"Oswald";color:var(--accent);letter-spacing:.25em;font-size:.78rem;text-transform:uppercase;margin-bottom:12px}
+.section-title{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;margin-bottom:14px}
+.section-lead{color:var(--muted);max-width:640px;margin-bottom:48px}
+.bg-alt{background:var(--bg2)}
+
+/* ===== Problem / About ===== */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.about-grid img{border-radius:14px;border:1px solid var(--line);aspect-ratio:3/4;object-fit:cover;width:100%}
+.feature-list{list-style:none;margin-top:24px}
+.feature-list li{position:relative;padding-left:34px;margin-bottom:18px;color:var(--muted)}
+.feature-list li::before{
+  content:"";position:absolute;left:0;top:9px;width:16px;height:16px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  box-shadow:0 0 0 4px rgba(25,195,201,.12);
+}
+.feature-list li b{color:var(--txt);display:block;font-weight:700}
+@media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:30px}.about-grid img{max-width:340px;margin:0 auto}}
+
+/* ===== Service cards ===== */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:30px 26px;
+  transition:transform .25s, border-color .25s;
+}
+.card:hover{transform:translateY(-5px);border-color:var(--accent-d)}
+.card .num{font-family:"Oswald";color:var(--accent);font-size:1.6rem;font-weight:700;margin-bottom:12px}
+.card h3{font-size:1.15rem;margin-bottom:10px;letter-spacing:0}
+.card p{color:var(--muted);font-size:.9rem}
+@media(max-width:760px){.cards{grid-template-columns:1fr}}
+
+/* ===== Pricing ===== */
+.price-card{
+  max-width:560px;margin:0 auto;background:linear-gradient(180deg,var(--card),#16161c);
+  border:1px solid var(--accent-d);border-radius:18px;padding:46px 40px;text-align:center;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+.price-card .plan{font-family:"Oswald";letter-spacing:.2em;color:var(--accent);text-transform:uppercase;font-size:.85rem;margin-bottom:18px}
+.price-card .amount{font-family:"Oswald";font-size:3.4rem;font-weight:700;line-height:1}
+.price-card .amount small{font-size:1rem;color:var(--muted);font-weight:500;margin-left:6px}
+.price-card .per{color:var(--muted);font-size:.85rem;margin-top:6px}
+.price-terms{list-style:none;text-align:left;margin:30px auto 32px;max-width:400px}
+.price-terms li{padding:12px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:.92rem;display:flex;gap:12px}
+.price-terms li::before{content:"▸";color:var(--accent)}
+.price-terms li:last-child{border-bottom:none}
+
+/* ===== Gallery ===== */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px;border:1px solid var(--line);filter:grayscale(.15);transition:filter .3s, transform .3s}
+.gallery img:hover{filter:grayscale(0);transform:scale(1.02)}
+@media(max-width:620px){.gallery{grid-template-columns:1fr 1fr}}
+
+/* ===== EN block ===== */
+.en-block{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.en-block .section-lead{margin-bottom:30px}
+.en-terms{list-style:none;max-width:640px;color:var(--muted)}
+.en-terms li{padding:10px 0 10px 28px;position:relative}
+.en-terms li::before{content:"–";position:absolute;left:0;color:var(--accent)}
+
+/* ===== Contact ===== */
+.contact-wrap{max-width:640px;margin:0 auto}
+.form-field{margin-bottom:20px}
+.form-field label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:8px;font-weight:500}
+.form-field label .req{color:var(--accent);margin-left:4px}
+.form-field input,.form-field textarea{
+  width:100%;background:var(--bg);border:1px solid var(--line);border-radius:8px;
+  padding:13px 15px;color:var(--txt);font-family:inherit;font-size:.95rem;transition:border-color .2s;
+}
+.form-field input:focus,.form-field textarea:focus{outline:none;border-color:var(--accent)}
+.form-field textarea{resize:vertical;min-height:130px}
+.form-note{color:var(--muted);font-size:.82rem;margin:18px 0 24px;text-align:center}
+.form-note a{color:var(--accent)}
+.contact-submit{width:100%;border:none;cursor:pointer;font-size:1rem}
+
+/* ===== 特商法 ===== */
+.law-table{width:100%;border-collapse:collapse;margin-top:30px;font-size:.9rem}
+.law-table th,.law-table td{border:1px solid var(--line);padding:14px 16px;text-align:left;vertical-align:top}
+.law-table th{background:var(--card);color:var(--txt);width:34%;font-weight:700;white-space:nowrap}
+.law-table td{color:var(--muted)}
+@media(max-width:620px){
+  .law-table,.law-table tbody,.law-table tr,.law-table th,.law-table td{display:block;width:100%}
+  .law-table th{border-bottom:none}
+  .law-table td{border-top:none;margin-bottom:-1px}
+}
+
+/* ===== Footer ===== */
+footer{background:#08080a;border-top:1px solid var(--line);padding:40px 0;text-align:center}
+footer .logo{font-size:1rem;margin-bottom:12px}
+footer p{color:var(--muted);font-size:.8rem;margin-bottom:6px}
+footer .small{font-size:.72rem;color:#5a5a63}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">MUSCLE<span>PHOTO</span>.TOKYO</div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">サービス</a>
+      <a href="#service">内容</a>
+      <a href="#price">料金</a>
+      <a href="#gallery">ギャラリー</a>
+      <a href="#contact">お問い合わせ</a>
+      <a href="#law">特商法</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="メニュー">☰</button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal in">
+      <span class="hero-eyebrow">Posing Coaching &amp; Photography</span>
+      <h1>客観的に自分の<br>ポージングを<span class="accent">見直しませんか？</span>
+        <span class="sub">フィジーク・ボディビル大会の選手のための撮影＆ポージング指導</span>
+      </h1>
+      <p class="lead">フィットネスの大会でステージに立つ皆さまへ。自分のポージングを客観的に見つめ直し、修正・改善しましょう。審査席から良く見えるためのポージングを指導します。</p>
+      <a href="#contact" class="btn">無料で相談する</a>
+      <a href="#price" class="btn btn-ghost">料金を見る</a>
+    </div>
+    <div class="hero-img reveal in">
+      <img src="photo3.jpeg" alt="フロントダブルバイセップスのポージング" id="heroPhoto">
+      <div class="badge"><b>¥15,000</b><small>/ month・月1回 60分</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT / 課題 ===== -->
+<section class="block" id="about">
+  <div class="container about-grid">
+    <div class="reveal">
+      <img src="photo2.jpeg" alt="バックポーズ">
+    </div>
+    <div class="reveal">
+      <div class="section-label">Why Posing Matters</div>
+      <h2 class="section-title">ポーズひとつで、評価は変わる。</h2>
+      <p class="section-lead">どれだけ鍛え上げた身体でも、見せ方が伝わらなければステージで損をしてしまいます。自分では気づけない角度や流れを、第三者の視点とカメラで可視化します。</p>
+      <ul class="feature-list">
+        <li><b>客観的な可視化</b>撮影した自分の姿を見て、ジャッジの目線で課題を発見します。</li>
+        <li><b>審査席目線の修正</b>正面・サイド・バックまで、舞台で映えるラインに整えます。</li>
+        <li><b>継続的な改善</b>月1回のセッションで、大会に向けて着実に仕上げていきます。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICE ===== -->
+<section class="block bg-alt" id="service">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Service</div>
+      <h2 class="section-title">サービス内容</h2>
+      <p class="section-lead">撮影とポージング指導をワンセットで提供します。ステージで最高の自分を見せるための、実戦的なセッションです。</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal"><div class="num">01</div><h3>ポージング撮影</h3><p>各規定ポーズを撮影し、自分の姿を客観的に確認。写真データで前後の変化も振り返れます。</p></div>
+      <div class="card reveal"><div class="num">02</div><h3>修正・改善指導</h3><p>撮影をもとに、角度・重心・流れを一つずつ修正。審査席から良く見えるポージングへ導きます。</p></div>
+      <div class="card reveal"><div class="num">03</div><h3>個別スケジュール</h3><p>月1回・60分のセッション。日時はご都合に合わせて個別に調整します。大会前の集中対策にも。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICE ===== -->
+<section class="block" id="price">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-title">料金プラン</h2>
+    </div>
+    <div class="price-card reveal">
+      <div class="plan">Monthly Coaching</div>
+      <div class="amount">15,000<small>円（税込）</small></div>
+      <div class="per">月謝 / Monthly Fee</div>
+      <ul class="price-terms">
+        <li>月に一度、1時間のセッションを行います</li>
+        <li>セッション日時はご都合に合わせて個別に調整します</li>
+        <li>お支払いいただいた分はキャンセルできません</li>
+      </ul>
+      <a href="#contact" class="btn" style="width:100%">この内容で相談する</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="block bg-alt" id="gallery">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Gallery</div>
+      <h2 class="section-title">ポージングギャラリー</h2>
+      <p class="section-lead">ステージで魅せるポーズの一例です。</p>
+    </div>
+    <div class="gallery reveal">
+      <img src="photo1.jpeg" alt="フロントポーズ（腰に手）">
+      <img src="photo3.jpeg" alt="フロントダブルバイセップス">
+      <img src="photo2.jpeg" alt="バックポーズ">
+    </div>
+  </div>
+</section>
+
+<!-- ===== ENGLISH ===== -->
+<section class="block en-block" id="english">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">For International Athletes</div>
+      <h2 class="section-title en-head">Posing Coaching &amp; Photography</h2>
+      <p class="section-lead">We offer photography and posing coaching services for athletes competing in fitness competitions, such as physique and bodybuilding contests. Take an objective look at your posing, make adjustments, and improve your performance. We'll teach you how to pose so you look your best from the judges' table.</p>
+      <ul class="en-terms">
+        <li>Monthly Fee: 15,000 yen</li>
+        <li>One 1-hour session per month</li>
+        <li>Payments are non-refundable</li>
+        <li>Session dates and times will be arranged individually to suit your schedule</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="block" id="contact">
+  <div class="container contact-wrap">
+    <div class="reveal" style="text-align:center">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">お問い合わせ</h2>
+      <p class="section-lead" style="margin:0 auto 40px">ご質問・お申し込みはお気軽にどうぞ。下記フォームの送信ボタンを押すとメールソフトが起動します。</p>
+    </div>
+    <form class="reveal" id="contactForm">
+      <div class="form-field">
+        <label>お名前<span class="req">必須</span></label>
+        <input type="text" id="f_name" required>
+      </div>
+      <div class="form-field">
+        <label>メールアドレス<span class="req">必須</span></label>
+        <input type="email" id="f_email" required>
+      </div>
+      <div class="form-field">
+        <label>お問い合わせ内容<span class="req">必須</span></label>
+        <textarea id="f_msg" required placeholder="ご希望の内容、出場予定の大会、ご質問などをご記入ください。"></textarea>
+      </div>
+      <p class="form-note">送信が起動しない場合は <a href="mailto:info@musclephoto.tokyo">info@musclephoto.tokyo</a> へ直接ご連絡ください。</p>
+      <button type="submit" class="btn contact-submit">メールを作成して送信</button>
+    </form>
+  </div>
+</section>
+
+<!-- ===== 特商法 ===== -->
+<section class="block bg-alt" id="law">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Legal</div>
+      <h2 class="section-title">特定商取引法に基づく表記</h2>
+      <table class="law-table">
+        <tr><th>販売事業者</th><td>アシスト合同会社</td></tr>
+        <tr><th>運営統括責任者</th><td>生田 修大</td></tr>
+        <tr><th>所在地</th><td>〒299-4301　千葉県長生郡一宮町一宮9803−2</td></tr>
+        <tr><th>お問い合わせ</th><td>info@musclephoto.tokyo<br><span style="font-size:.82rem">※お問い合わせはメールにて承ります。電話番号はご請求があれば遅滞なく開示いたします。</span></td></tr>
+        <tr><th>販売価格</th><td>月謝 15,000円（税込）</td></tr>
+        <tr><th>商品代金以外の必要料金</th><td>セッション会場までの交通費等はお客様のご負担となる場合があります。</td></tr>
+        <tr><th>お支払い方法</th><td>銀行振込（お申し込み時に個別にご案内します）</td></tr>
+        <tr><th>お支払い時期</th><td>各セッションの実施前にお支払いいただきます。</td></tr>
+        <tr><th>サービスの提供時期</th><td>お支払い確認後、個別に調整した日時にセッションを実施します（月1回・1時間）。</td></tr>
+        <tr><th>キャンセル・返金について</th><td>サービスの性質上、お支払いいただいた分のキャンセル・返金はできません。セッション日時の変更は事前のご相談に応じます。</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="logo">MUSCLE<span class="accent">PHOTO</span>.TOKYO</div>
+    <p>ポージング撮影・指導サービス</p>
+    <p><a href="mailto:info@musclephoto.tokyo" style="color:var(--accent)">info@musclephoto.tokyo</a></p>
+    <p class="small">運営：アシスト合同会社　千葉県長生郡一宮町一宮9803−2</p>
+    <p class="small">© 2026 Muscle Photo Tokyo / アシスト合同会社 All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+// モバイルメニュー
+const toggle=document.getElementById('navToggle');
+const links=document.getElementById('navLinks');
+toggle.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+// スクロール表示アニメーション
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// 問い合わせフォーム → mailto 起動
+document.getElementById('contactForm').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  const name=document.getElementById('f_name').value.trim();
+  const email=document.getElementById('f_email').value.trim();
+  const msg=document.getElementById('f_msg').value.trim();
+  const subject=encodeURIComponent('【お問い合わせ】ポージング指導サービス');
+  const body=encodeURIComponent(
+    'お名前：'+name+'\n'+
+    'メールアドレス：'+email+'\n\n'+
+    'お問い合わせ内容：\n'+msg+'\n'
+  );
+  window.location.href='mailto:info@musclephoto.tokyo?subject='+subject+'&body='+body;
+});
+</script>
+</body>
+</html>
