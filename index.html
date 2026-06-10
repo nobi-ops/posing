@@ -176,6 +176,16 @@ section.block{padding:90px 0}
 .price-terms li{padding:12px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:.92rem;display:flex;gap:12px}
 .price-terms li::before{content:"▸";color:var(--accent)}
 .price-terms li:last-child{border-bottom:none}
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;max-width:920px;margin:0 auto}
+.price-grid .price-card{max-width:none;margin:0;display:flex;flex-direction:column}
+.price-grid .price-card .btn{margin-top:auto}
+.price-card.premium{border-color:var(--accent2);box-shadow:0 20px 60px rgba(61,220,138,.12)}
+.price-tag{display:inline-block;font-family:"Oswald";letter-spacing:.12em;font-size:.7rem;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:16px}
+.price-tag.sub{background:rgba(25,195,201,.12);color:var(--accent);border:1px solid var(--accent-d)}
+.price-tag.prem{background:rgba(61,220,138,.12);color:var(--accent2);border:1px solid var(--accent2)}
+.premium-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:1px solid var(--line);margin-bottom:22px}
+.price-desc{color:var(--muted);font-size:.92rem;line-height:1.8;text-align:left;margin:0 0 6px}
+@media(max-width:760px){.price-grid{grid-template-columns:1fr;gap:22px}}
 
 /* ===== Gallery ===== */
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -351,18 +361,40 @@ footer .small{font-size:.72rem;color:#5a5a63}
     <div class="reveal" style="text-align:center">
       <div class="section-label">Pricing</div>
       <h2 class="section-title">料金プラン</h2>
+      <p class="section-lead" style="margin:0 auto 48px">継続して仕上げる月額コーチングと、仕上がった姿を作品として残す単発の撮影プラン。目的に合わせてお選びいただけます。</p>
     </div>
-    <div class="price-card reveal">
-      <div class="plan">月額制サブスクリプション ・ Monthly Subscription</div>
-      <div class="amount">15,000<small>円 / 月（税込）</small></div>
-      <div class="per">毎月月初のお支払いで継続してご利用いただけます</div>
-      <ul class="price-terms">
-        <li>月に一度、1時間のセッションを行います</li>
-        <li>オンライン（ビデオ通話）・対面のどちらでも受講できます</li>
-        <li>セッション日時はご都合に合わせて個別に調整します</li>
-        <li>お支払いいただいた分はキャンセルできません</li>
-      </ul>
-      <a href="#contact" class="btn" style="width:100%">この内容で相談する</a>
+    <div class="price-grid">
+
+      <div class="price-card reveal">
+        <span class="price-tag sub">Coaching</span>
+        <div class="plan">月額制サブスクリプション ・ Monthly Subscription</div>
+        <div class="amount">15,000<small>円 / 月（税込）</small></div>
+        <div class="per">毎月のお支払いで継続してご利用いただけます</div>
+        <ul class="price-terms">
+          <li>月に一度、1時間のセッションを行います</li>
+          <li>オンライン（ビデオ通話）・対面のどちらでも受講できます</li>
+          <li>セッション日時はご都合に合わせて個別に調整します</li>
+          <li>お支払いいただいた分はキャンセルできません</li>
+        </ul>
+        <a href="#contact" class="btn" style="width:100%">この内容で相談する</a>
+      </div>
+
+      <div class="price-card premium reveal">
+        <img src="photo1.jpeg" alt="プレミアムフォトセッションの作例" class="premium-img">
+        <span class="price-tag prem">Premium</span>
+        <div class="plan">プレミアムフォトセッション ・ Premium Photo Session</div>
+        <div class="amount">49,800<small>円（税込）</small></div>
+        <div class="per">単発 / 1回の撮影セッション</div>
+        <p class="price-desc">大会前など、身体が仕上がったベストなコンディションを“作品”として残すための撮影プランです。鍛え上げた今この瞬間は、二度と同じようには戻ってきません。プロのライティングと構図で、ステージ映えするポージングを一生モノの一枚に仕上げます。</p>
+        <ul class="price-terms">
+          <li>仕上がったコンディションをプロクオリティで撮影</li>
+          <li>ポージング指導込みで、最高の一枚を引き出します</li>
+          <li>レタッチ済みの高解像度データでお渡し</li>
+          <li>月額会員でなくても、単発でご利用いただけます</li>
+        </ul>
+        <a href="#contact" class="btn" style="width:100%">このプランを相談する</a>
+      </div>
+
     </div>
   </div>
 </section>
@@ -413,7 +445,7 @@ footer .small{font-size:.72rem;color:#5a5a63}
         <tr><th>運営統括責任者</th><td>生田 修大</td></tr>
         <tr><th>所在地</th><td>〒299-4301　千葉県長生郡一宮町一宮9803−2</td></tr>
         <tr><th>お問い合わせ</th><td>info@musclephoto.tokyo<br><span style="font-size:.82rem">※お問い合わせはメールにて承ります。電話番号はご請求があれば遅滞なく開示いたします。</span></td></tr>
-        <tr><th>販売価格</th><td>月謝 15,000円（税込）</td></tr>
+        <tr><th>販売価格</th><td>月額コーチング：15,000円／月（税込）<br>プレミアムフォトセッション：49,800円（税込・単発）</td></tr>
         <tr><th>商品代金以外の必要料金</th><td>衣装代、交通費はお客様のご負担となります。</td></tr>
         <tr><th>お支払い方法</th><td>クレジットカード払い（お申し込み時に個別にご案内します）</td></tr>
         <tr><th>お支払い時期</th><td>初回はお申し込み時に決済されます。翌月以降は、毎月最初のお申し込み日と同日に自動的に決済されます（例：10日にお申し込みの場合は毎月10日）。該当する決済日がない月（例：31日）は、その月の末日に決済されます。決済日の前日までに解約手続きがない限り自動更新されます。</td></tr>
